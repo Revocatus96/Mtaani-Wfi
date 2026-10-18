@@ -15,7 +15,7 @@ users = []
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('landing.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -28,7 +28,7 @@ def login():
             return redirect('/success')
         else:
             flash("Voucher si sahihi au imeshatumika!", "error")
-    return render_template('login.html')
+    return render_template('admin_login.html')
 
 @app.route('/success')
 def success():
