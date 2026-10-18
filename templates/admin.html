@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin - Mtaani</title>
+<style>body{font-family:Arial;background:#f5f5f5;padding:10px}table{width:100%;background:white;border-collapse:collapse;margin:10px 0}th,td{border:1px solid #ddd;padding:8px;font-size:13px}th{background:#0084ff;color:white}.card{background:white;padding:15px;margin:10px 0;border-radius:10px}</style>
+</head>
+<body>
+<h2>Admin Panel - Mtaani Wifi</h2>
+<div class="card"><b>Wateja:</b> {{ total_users }} | <b>Vouchers:</b> {{ total_vouchers }} | <a href="/admin/login">Logout Admin</a></div>
+
+<h3>Wateja ({{ users|length }})</h3>
+<table><tr><th>ID</th><th>Jina</th><th>Phone</th></tr>{% for u in users %}<tr><td>{{ u[0] }}</td><td>{{ u[1] }}</td><td>{{ u[2] }}</td></tr>{% endfor %}</table>
+
+<h3>Vouchers</h3>
+<table><tr><th>Code</th><th>Hours</th><th>Used</th></tr>{% for v in vouchers %}<tr><td>{{ v[0] }}</td><td>{{ v[1] }}</td><td>{{ v[2] }}</td></tr>{% endfor %}</table>
+
+<h3>Malipo</h3>
+<table><tr><th>Phone</th><th>Amount</th><th>Code</th></tr>{% for p in payments %}<tr><td>{{ p[1] }}</td><td>{{ p[2] }}</td><td>{{ p[3] }}</td></tr>{% endfor %}</table>
+</body>
+</html>
